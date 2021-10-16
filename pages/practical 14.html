@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-14(Counter)</title>
+</head>
+<style>
+    
+    *
+    {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    body
+    {
+    height:250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 146, 127);
+    }
+    .counter
+    {
+    margin-top: 50px;
+    }
+    #neg, #pos
+    {
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+    background-color: rgb(207, 121, 247);
+    border-radius: 10px;
+    }
+    #count
+    {
+    display: inline;
+    font-size: 50px;
+    margin: 0 30px;
+    }
+
+</style>
+
+<body>
+    <h1>COUNTER</h1>
+    <div class="counter">
+        <button id="neg" onclick="decrease()" disabled>-</button>
+        <span id="count">0</span>
+        <button id="pos" onclick="increase()">+</button>
+    </div>
+
+
+    <script>
+        var data = 0;
+        var btn = document.getElementById("neg");
+
+        function decrease()
+        {
+            data = data - 1;
+            document.getElementById("count").innerText = data;
+            if(data <= 0)
+            {
+                btn.disabled = true;
+            }
+        }
+
+        function increase()
+        {
+            data = data + 1;
+            document.getElementById("count").innerText = data;
+            if(data > 0)
+            {
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
